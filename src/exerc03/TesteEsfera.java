@@ -13,42 +13,27 @@ public class TesteEsfera {
 		Scanner leitor = new Scanner(System.in);
 
 		do {
-			System.out.printf("Digite  NÃºmero: ");
+			System.out.printf("Digite um número: ");
 			try {
 				auxLeitura = leitor.nextDouble();
 				valor = new Esfera(auxLeitura);
 
-				System.out.printf("\nï¿½rea da esfera: %.2fmï¿½\n", valor.areaTotalEsfera());
-				System.out.printf("\nVolume da esfera: %.2fmï¿½\n\n\n", valor.volumeEsfera());
+				System.out.printf("\nÁrea da esfera: %.2f\n", valor.areaTotalEsfera());
+				System.out.printf("\nVolume da esfera: %.2f\n\n\n", valor.volumeEsfera());
 
 			} catch (InputMismatchException e) {
 
-				System.out.println("Entrada InvÃ¡lida Somento Double\n\n\n");
+				System.out.println("Entrada Inválida Somento Double\n\n\n");
 				auxLeitura = 0.0;
 
 			} catch (Exception e) {
-				System.out.println("Somente NÃºmeros possitivos\n\n\n\n");
+				System.out.println("Somente Números positivos\n\n\n\n");
 			}
 			leitor.nextLine();
+			
 		} while (auxLeitura != -90);
 
-		System.out.println("Parei");	
-//			
-//			try {
-//				valor = new Esfera(raio);
-//
-//				System.out.printf("ï¿½rea da esfera: %.2fmï¿½", valor.areaTotalEsfera());
-//				System.out.printf("\n\nVolume da esfera: %.2fmï¿½", valor.volumeEsfera());
-//
-//			} catch (Exception e) {
-//				
-//				e.printStackTrace();
-//		
-//			}
-//		}
-//		
-//		
-//
+
 	}
 
 }
