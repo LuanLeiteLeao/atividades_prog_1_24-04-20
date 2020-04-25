@@ -2,11 +2,13 @@ package exerc03;
 
 import javax.management.RuntimeErrorException;
 
+import utils.Valida;
+
 public class Esfera {
 
 	private double raio;
 
-	public Esfera(double raio) {
+	public Esfera(double raio) throws Exception {
 		super();
 
 		this.setRaio(raio);
@@ -17,14 +19,11 @@ public class Esfera {
 		return raio;
 	}
 
-	public void setRaio(double raio) {
+	public void setRaio(double raio) throws Exception {
 		
-		if (raio > 0) {
-			this.raio = raio;
-		} else {
-			System.out.println("\nNúmero inválido!");
-			System.exit(1);
-		}
+		Valida.validaNegativo(raio);
+		
+		this.raio = raio;
 	}
 
 	public double areaTotalEsfera() {
