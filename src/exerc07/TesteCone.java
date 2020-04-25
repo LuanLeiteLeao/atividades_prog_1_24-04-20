@@ -7,7 +7,7 @@ public class TesteCone {
 		Cone valor = new Cone(3,6);
 		
 		System.out.printf("Geratriz do Cone: %.2f", valor.geratrizCone());
-		//System.out.printf("\nVolume do Cone: %.2f", valor.volumeCone());
+		System.out.printf("\nVolume do Cone: %.2f", valor.volumeCone());
 		
 	}
 
