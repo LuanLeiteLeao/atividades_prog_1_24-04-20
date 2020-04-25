@@ -8,41 +8,47 @@ public class TesteEsfera {
 	public static void main(String[] args) {
 
 		Esfera valor;
-		
-		Scanner leitor = new Scanner(System.in);
-		
-		Double auxLeitura = null;
-		Scanner leitor = new Scanner(System.in);		
-		do {						
-			System.out.printf("Digite a %s:",nomeVariavel);
-			try {
-				auxLeitura = leitor.nextDouble(); //
-			}catch (InputMismatchException e) {
-				System.out.printf(
-						"%s inválida, redigite!\n",
-						nomeVariavel);
-				leitor.nextLine();
-			}
-			
-		}while(auxLeitura == null);
-		return auxLeitura;
-		
-			
-			try {
-				valor = new Esfera(raio);
 
-				System.out.printf("Área da esfera: %.2fm²", valor.areaTotalEsfera());
-				System.out.printf("\n\nVolume da esfera: %.2fm³", valor.volumeEsfera());
+		Double auxLeitura = null;
+		Scanner leitor = new Scanner(System.in);
+
+		do {
+			System.out.printf("Digite  NÃºmero: ");
+			try {
+				auxLeitura = leitor.nextDouble();
+				valor = new Esfera(auxLeitura);
+
+				System.out.printf("\nï¿½rea da esfera: %.2fmï¿½\n", valor.areaTotalEsfera());
+				System.out.printf("\nVolume da esfera: %.2fmï¿½\n\n\n", valor.volumeEsfera());
+
+			} catch (InputMismatchException e) {
+
+				System.out.println("Entrada InvÃ¡lida Somento Double\n\n\n");
+				auxLeitura = 0.0;
 
 			} catch (Exception e) {
-				
-				e.printStackTrace();
-		
+				System.out.println("Somente NÃºmeros possitivos\n\n\n\n");
 			}
-		}
-		
-		
+			leitor.nextLine();
+		} while (auxLeitura != -90);
 
+		System.out.println("Parei");	
+//			
+//			try {
+//				valor = new Esfera(raio);
+//
+//				System.out.printf("ï¿½rea da esfera: %.2fmï¿½", valor.areaTotalEsfera());
+//				System.out.printf("\n\nVolume da esfera: %.2fmï¿½", valor.volumeEsfera());
+//
+//			} catch (Exception e) {
+//				
+//				e.printStackTrace();
+//		
+//			}
+//		}
+//		
+//		
+//
 	}
 
 }

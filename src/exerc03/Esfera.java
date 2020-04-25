@@ -2,8 +2,6 @@ package exerc03;
 
 import javax.management.RuntimeErrorException;
 
-import utils.Valida;
-
 public class Esfera {
 
 	private double raio;
@@ -20,10 +18,12 @@ public class Esfera {
 	}
 
 	public void setRaio(double raio) throws Exception {
-		
-		Valida.validaNegativo(raio);
-		
-		this.raio = raio;
+
+		if (raio > 0) {
+			this.raio = raio;
+		} else {
+			throw new RuntimeException("Erro Numero Não Pode Ser Negativo");
+		}
 	}
 
 	public double areaTotalEsfera() {
